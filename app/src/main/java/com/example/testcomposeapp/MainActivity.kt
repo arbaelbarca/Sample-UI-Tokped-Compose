@@ -49,6 +49,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.testcomposeapp.ui.component.MainBannerHomePreview
+import com.example.testcomposeapp.ui.component.MainBannerVertikalPreview
 import com.example.testcomposeapp.ui.component.MainBottomBarNavPreview
 import com.example.testcomposeapp.ui.component.MainTopBarPreview
 import com.example.testcomposeapp.ui.component.MainTopCategoryHorizontalPreview
@@ -81,7 +82,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainApp() {
     Scaffold(
-        topBar = { MainTopBarPreview() },
         bottomBar = { MainBottomBarNavPreview() }
     ) { paddingValues ->
         Column(
@@ -89,7 +89,7 @@ fun MainApp() {
                 .verticalScroll(rememberScrollState())
                 .padding(paddingValues)
         ) {
-//            MainTopBarPreview()
+            MainTopBarPreview()
             MainTopMenuPreview()
             Divider(
                 modifier = Modifier
@@ -97,9 +97,10 @@ fun MainApp() {
                     .height(2.dp)
             )
             MainTopCategorySecondPreview()
+            MainTopCategoryHorizontalPreview()
             MainTopCategoryPreview()
             MainBannerHomePreview()
-            MainTopCategoryHorizontalPreview()
+            MainBannerVertikalPreview()
         }
     }
 

@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -32,29 +33,15 @@ fun MainTopCategoryHorizontal(listCategoryHorizontal: ListCategoryHorizontal) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(6.dp),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(5.dp)
         ) {
-            Card() {
-                Image(
-                    modifier = Modifier
-                        .width(IntrinsicSize.Max),
-                    painter = painterResource(id = listCategoryHorizontal.imgCatHorizontal),
-                    contentDescription = null
-                )
-            }
-        }
-        Spacer(modifier = Modifier.padding(10.dp))
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(5.dp)
-        ) {
-            Card() {
+            Card(
+                shape = RoundedCornerShape(7.dp)
+            ) {
                 Image(
                     modifier = Modifier
                         .width(IntrinsicSize.Max),

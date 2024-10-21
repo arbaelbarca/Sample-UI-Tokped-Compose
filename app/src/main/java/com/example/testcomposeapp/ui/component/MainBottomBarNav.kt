@@ -11,13 +11,17 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.example.testcomposeapp.R
 import com.example.testcomposeapp.ui.model.BottomBarNavItem
 
 
 @Composable
 fun MainBottomBarNav() {
-    NavigationBar() {
+    NavigationBar(
+        containerColor = Color.White,
+        contentColor = Color.Green
+    ) {
         val bottomNavBarList = listOf(
             BottomBarNavItem(
                 "Home",
